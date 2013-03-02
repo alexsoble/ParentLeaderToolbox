@@ -1,0 +1,2 @@
+module CommentstarsHelper
+end

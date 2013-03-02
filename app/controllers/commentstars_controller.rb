@@ -1,0 +1,2 @@
+class CommentstarsController < ApplicationController
+end

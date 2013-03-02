@@ -1,0 +1,2 @@
+module ToolstarsHelper
+end
