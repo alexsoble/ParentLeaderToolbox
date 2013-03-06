@@ -2,9 +2,36 @@
 <html>
 <head>
   <title>ParentToolbox</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= stylesheet_link_tag  "application", :media => "all" %>
+  <%= stylesheet_link_tag  "plt.css", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  	<div id="p-header">
+        <div id="p-header-container">
+            <div id="nav-bottom">
+                <ul>
+                    <li id="navSignIn" class="last">
+                        <a id="lnkHome" href="/signin">Sign In</a>
+                    </li>
+                	<li id="navAboutUs">
+                        <a id="lnkAboutUs" href="/about">About Us</a>
+                    </li>
+                    <li id="navTools">
+                        <a id="lnkTools" href="/tools">Tools</a>
+                    </li>
+                    <li id="navHome">
+                        <a id="lnkHome" href="/home">Home</a>
+                    </li>                    
+                </ul>
+            </div>
+            <div id="logo" onclick="location.href='/tools';">
+                PARENT <span style="color: red;">LEADER</span> TOOLBOX
+            </div>
+        </div>
+    </div>
+    
+    <div id="p-body">
+        <div id="p-body-container">
 </head>
 <body>
 
