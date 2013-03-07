@@ -1,10 +1,10 @@
 categories = [
-	{ :name => 'Identify Opportunities' },
-	{ :name => 'Collaborate' },
-	{ :name => 'Raise the Bar' },
-	{ :name => 'Support Systems' },
-	{ :name => 'Fundraising' },
-	{ :name => 'Sell the Dream' }
+	{ :name => 'Getting Started' },
+	{ :name => 'Renovation' },
+	{ :name => 'Branding' },
+	{ :name => 'The Fundraiser' },
+	{ :name => 'Your School Network' },
+	{ :name => 'Partnering Up' }
 ]
 
 Category.destroy_all
@@ -17,13 +17,13 @@ end
 
 tools = [
 	{ :name => 'Find your neighborhood school', 
-	  :category_id => Category.find_by_name('Identify Opportunities').id },
+	  :category_id => Category.find_by_name('Getting Started').id },
 	{ :name => 'Get in touch with your alderman',
-		:category_id => Category.find_by_name('Identify Opportunities').id },
+		:category_id => Category.find_by_name('Partnering Up').id },
 	{ :name => 'Gather a team',
-		:category_id => Category.find_by_name('Identify Opportunities').id },
+		:category_id => Category.find_by_name('Your School Network').id },
 	{ :name => 'Reach out to the Chamber of Commerce',
-		:category_id => Category.find_by_name('Identify Opportunities').id }
+		:category_id => Category.find_by_name('Partnering Up').id }
 ]
 
 
