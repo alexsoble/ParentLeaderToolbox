@@ -10,9 +10,18 @@
         <div id="p-header-container">
             <div id="nav-bottom">
                 <ul>
-                    <li id="navSignIn" class="last">
-                        <a id="lnkHome" href="/signin">Sign In</a>
-                    </li>
+                    <% if session[:user_id] %>
+                        <li id="navSignOut" class="last">
+                            <a id="lnkHome" href="/signout">Sign Out</a>
+                        </li>
+                    <% else -%>
+                        <li id="navSignUp" class="last">
+                            <a id="lnkHome" href="/signup">Sign Up</a>
+                        </li>
+                        <li id="navSignIn">
+                            <a id="lnkHome" href="/signin">Sign In</a>
+                        </li>
+                    <% end %>
                 	<li id="navAboutUs">
                         <a id="lnkAboutUs" href="/about">About Us</a>
                     </li>
@@ -33,6 +42,8 @@
     <div id="p-body">
         <div id="p-body-container">
 </head>
+<%= notice %>
+
 <body>
 
 <%= yield %>
