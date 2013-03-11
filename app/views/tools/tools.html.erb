@@ -18,7 +18,7 @@
             
             	<div class="column-container side-nav">
             		<% Category.all.each do |c| %>
-	            		<div class="side-nav-item"><%= c.name %></div>
+	            		<div class="side-nav-item"><%= link_to "#{c.name}", category_url(c) %></div>
 	            	<% end %>
             	</div>
             	

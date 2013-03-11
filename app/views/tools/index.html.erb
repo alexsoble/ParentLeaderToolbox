@@ -28,10 +28,40 @@
             		maybe mention Jacque, TSL
             	</div>
             		            	
-            	<div class="column-container featured">Featured Tool #1</div>
-            	<div class="column-container featured">Featured Tool #2</div>
-            	<div class="column-container featured">Featured Tool #3</div>
+            	<div class="column-container featured">Featured Tool:
+            	<br>
+            	<br>
+            	<% t = Tool.all.shuffle.first %>
+            	<i><strong><%= t.name %></strong></i>
+            	<br>
+            	<%= link_to 'Visit their website', "#{t.url}" %>
+            	<br>
+            	<br>
+            	<%= t.description %></div>
+
+
+            	<div class="column-container featured">Featured Tool:
+            	<br>
+            	<br>
+            	<% t = Tool.all.shuffle.first %>
+            	<i><strong><%= t.name %></strong></i>
+            	<br>
+            	<%= link_to 'Visit their website', "#{t.url}" %>
+            	<br>
+            	<br>
+            	<%= t.description %></div>
+            	<div class="column-container featured">Featured Tool:
+            	<br>
+            	<br>
+            	<% t = Tool.all.shuffle.first %>
+            	<i><strong><%= t.name %></strong></i>
+            	<br>
+            	<%= link_to 'Visit their website', "#{t.url}" %>
+            	<br>
+            	<br>
+            	<%= t.description %></div>
             	<div style="clear: both;"></div>
+            	
             	<!-- Home view end -->
             	
             	<!-- YEILD End -->

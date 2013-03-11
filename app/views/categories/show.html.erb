@@ -1,0 +1,60 @@
+
+        	<div id="toolsIndex">
+
+            	<div id="pageHeading">
+            		<div id="member-name">
+            			Welcome Member!
+            		</div>
+            		
+            		<% this_category = Category.find_by_id(params[:id]) %>
+            		<h1>
+            			CATEGORY:  <%= this_category.name.upcase %>
+            		</h2>
+	        		<p>
+	            		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt 
+	            		ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+	            		laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+	            		voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat 
+	            		cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	        		</p>
+            	</div>
+            
+            	<div class="column-container side-nav">
+            		<% Category.all.each do |c| %>
+	            		<div class="side-nav-item"><%= link_to "#{c.name}", category_url(c) %></div>
+	            	<% end %>
+            	</div>
+            	
+            	<% these_tools = Tool.where(:category_id => this_category.id) %>
+            	<% these_tools.all.each do |t| %>
+            	
+            	<div style="float: left;">
+	            	<div class="tool-container" style="border-top: solid 1px #333333;">
+	            		<p style="font-weight: bold;">
+		            		<%= t.name %>
+	            		</p>
+	            		<p>
+										<%= t.description %>
+		            	</p> 	
+	            			<%= link_to "Visit their website", "#{t.url}" %>
+	            	</div>
+            	</div>
+            	
+            	<% end %>
+            	            	
+            	<div style="clear: both;"></div>
+        	</div>
+        	<!-- VIEW HTML End -->
+        	
+        </div>
+    </div>
+    
+    <div id="p-footer">
+        <div id="p-footer-container">
+            <div style="padding: 16px;">
+                Footer</div>
+        </div>
+    </div>
+
+</body>
+</html>
