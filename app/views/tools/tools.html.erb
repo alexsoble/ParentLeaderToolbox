@@ -22,36 +22,44 @@
 	            	<% end %>
             	</div>
             	
+            	<div style="float: left;">
+	            	<div class="column-container">
+	            	  <% c = Category.first %>
+	            		<div class="category-container-image">Image</div>
+		            	<div class="category-container-text"><%= link_to "#{c.name}", category_url(c) %></div>
+	            	</div>
+	            	<div class="column-container">
+	            		<% c = Category.offset(1).first %>
+	            		<div class="category-container-image">Image</div>
+		            	<div class="category-container-text"><%= link_to "#{c.name}", category_url(c) %></div>
+	            	</div>
+	            	<div class="column-container">
+	            		<% c = Category.offset(2).first %>
+	            		<div class="category-container-image">Image</div>
+		            	<div class="category-container-text"><%= link_to "#{c.name}", category_url(c) %></div>
+	            	</div>
+	            	<div style="clear: both;"></div>
+
+            	
             	
             	<div style="float: left;">
-	            	<div class="column-container" onclick="location.href='./category.html';">
+	            	<div class="column-container">
+	            		<% c = Category.offset(3).first %>
 	            		<div class="category-container-image">Image</div>
-		            	<div class="category-container-text">CATEGORY 1</div>
+		            	<div class="category-container-text"><%= link_to "#{c.name}", category_url(c) %></div>
 	            	</div>
-	            	<div class="column-container" onclick="location.href='./category.html';">
-	            		<div class="category-container-image">Image</div>
-		            	<div class="category-container-text">CATEGORY 2</div>
+	            	<div class="column-container">
+	            		<% c = Category.offset(4).first %>
+									<div class="category-container-image">Image</div>
+		            	<div class="category-container-text"><%= link_to "#{c.name}", category_url(c) %></div>
 	            	</div>
-	            	<div class="column-container" onclick="location.href='./category.html';">
+	            	<div class="column-container">
+	            		<% c = Category.offset(5).first %>
 	            		<div class="category-container-image">Image</div>
-		            	<div class="category-container-text">CATEGORY 3</div>
+		            	<div class="category-container-text"><%= link_to "#{c.name}", category_url(c) %></div>
 	            	</div>
 	            	<div style="clear: both;"></div>
 	            	
-	            	<div class="column-container" onclick="location.href='./category.html';">
-	            		<div class="category-container-image">Image</div>
-		            	<div class="category-container-text">CATEGORY 4</div>
-	            	</div>
-	            	<div class="column-container" onclick="location.href='./category.html';">
-	            		<div class="category-container-image">Image</div>
-		            	<div class="category-container-text">CATEGORY 5</div>
-	            	</div>
-	            	<div class="column-container" onclick="location.href='./category.html';">
-	            		<div class="category-container-image">Image</div>
-		            	<div class="category-container-text">CATEGORY 6</div>
-	            	</div>
-	            	<div style="clear: both;"></div>
-            	</div>
             	<div style="clear: both;">&nbsp;</div>
         	</div>
         	<!-- VIEW HTML End -->
