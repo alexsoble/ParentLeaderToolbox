@@ -1,8 +1,8 @@
 body
 {
-	background-color: #F1F1F2;
+	background-color: #FFFFFF;
 	color: #333333;
-	font-family: Helvetica, Arial, sans-serif;
+	font-family: Arial, Helvetica, sans-serif;
 	font-size: 16px;
 	margin: 0px;
 }
@@ -12,6 +12,8 @@ h1
 	font-size: 20px;
 	margin: 0px;
 }
+
+/* Start Page Layout Template */
 #p-header
 {
 	min-width: 960px;
@@ -20,9 +22,15 @@ h1
 }
 #p-header-container
 {
-	background-color: #FFFFFF;
 	margin: auto;
 	width: 960px;
+	padding: 16px 0px 24px 0px;
+}
+#p-header-menu
+{
+	border-bottom: solid 1px #c0c0c0;
+	padding-bottom: 8px;
+	margin: 0px 8px;
 }
 #p-body
 {
@@ -31,7 +39,6 @@ h1
 }
 #p-body-container
 {
-	background-color: #FFFFFF;
 	margin: auto;
 	text-align: left;
 	width: 960px;
@@ -44,21 +51,89 @@ h1
 }
 #p-footer-container
 {
-	background-color: #FFFFFF;
 	margin: auto;
 	width: 960px;
 }
+/* End Page Layout Template */
+
+
+/* ID Selectors */
+#homePage .column-container
+{
+	float: left;
+	width: 272px;
+	height: 272px;
+	padding: 16px;
+	margin: 0px 8px;
+}
+#homePage .video
+{
+	float: left;
+	width: 304px;
+	margin: 0px 8px;
+}
+#homePage .message-container
+{
+	float: left;
+	margin: 0px 8px;
+	width: 624px; 
+}
+#homePage .message-container .content-area
+{
+	padding: 0px 32px 0px 40px;
+}
+#homePage .message-container .title
+{
+	font-size: 150%;
+	font-weight: bold;
+}
+#homePage .message-container .content
+{
+	margin-top: 16px;
+	line-height: 24px;
+}
+#homePage .column-container.featured
+{
+	color: #f5f5f5;
+	background-color: #ff0000;
+	border-radius: 12px;
+	text-align: center;
+}
+#homePage .column-container.featured .image
+{
+	width: 120px;
+	margin-top: 16px;
+}
+#homePage .column-container.featured .title
+{
+	margin: 16px 0px;
+	font-size: 150%;
+	letter-spacing: 2px;
+}
+#homePage .column-container.featured .description
+{
+	width: 236px;
+	margin-left: 18px;
+	line-height: 24px;
+	text-align: left;
+}
 #logo
 {
-	padding: 16px;
+	padding: 8px 0px;
 	font-weight: bold;
 	font-size: 24px; 
 	cursor: pointer;
 }
+#member-name
+{
+	float: right; 
+	font-weight: bold; 
+	margin-top: 4px;
+}
 #nav-bottom 
 {
     float: right;
-    margin: 20px 16px 0px 0px;
+    margin: 16px 0px 0px 0px;
     text-align: right;
     padding: 0px;
     /*outline: solid 1px red;*/
@@ -100,31 +175,9 @@ h1
 #pageHeading 
 {
 	padding: 16px;
-	background-color: #D2B48C;
-}
-#member-name
-{
-	float: right; 
-	font-weight: bold; 
-	margin-top: 4px;
-}
-#homePage .column-container
-{
-	float: left;
-	width: 288px;
-	min-height: 288px;
-	outline: solid 1px red;
-	padding: 16px;
-}
-#homePage .column-container.message
-{
-	width: 608px; 
-	background-color: #2f4f4f; 
-	color: #f5f5f5;
-}
-#homePage .column-container.featured
-{
-	background-color: #ADD8E6;
+	font-size: 150%;
+	font-weight: bold;
+	text-align: center;
 }
 #toolsIndex .column-container
 {
@@ -138,6 +191,10 @@ h1
 {
 	margin-left: 16px;
 }
+/* End ID Selectords */
+
+
+/* Element Selectors */
 .side-nav-item
 {
 	padding: 16px 0px;
@@ -185,14 +242,6 @@ h1
 	text-align: left; 
 	border-radius: 12px;
 }
-.tool-container
-{
-	padding: 16px;
-	background-color: #FAEBD7; 
-	width: 678px;
-	border: solid 1px #333333;
-	border-top: none;
-}
 .link-text
 {
 	color: blue;
@@ -203,3 +252,56 @@ h1
 {
 	text-decoration: none;
 }
+.tool-container
+{
+	float: left;
+	width: 272px;
+	min-height: 600px;
+	padding: 16px;
+	margin: 0px 8px;
+	color: #f5f5f5;
+	background-color: #ff0000;
+	border-radius: 12px;
+	text-align: center;
+}
+.tool-container.about
+{
+	height: 272px;
+	min-height: 272px;
+}
+.tool-container .image
+{
+	width: 120px;
+	margin-top: 16px;
+}
+.tool-container .title
+{
+	margin: 16px 0px;
+	font-size: 150%;
+	letter-spacing: 2px;
+}
+.tool-container .description
+{
+	width: 236px;
+	margin-left: 18px;
+	line-height: 24px;
+	text-align: left;
+}
+.tool-container .items
+{
+	margin-top: 16px;
+	padding-top: 8px;
+	border-top: dotted 1px #f5f5f5;
+	text-align: left;
+}
+.tools-container-item
+{
+	cursor: pointer;
+	padding: 8px 0px;
+	text-decoration: underline;
+}
+.tools-container-item:hover
+{
+	text-decoration: none;
+}
+/* End Element Selectords */

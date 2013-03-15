@@ -1,79 +1,47 @@
-        	<!-- YEILD Start -->
-        	
-        	<!-- Home View end -->
-        	<div id="homePage">
-            	<div id="pageHeading">
-            		<div id="member-name">
-            			Welcome Member!
-            		</div>
-            		<h1>
-            			HOME
-            		</h2>
-	        		<p>
-	            		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt 
-	            		ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-	            		laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-	            		voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat 
-	            		cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-	        		</p> 
-            	</div>
-                	
-            	<div class="column-container">
-            		Image
-            	</div>
-            	<div class="column-container message"> 
-            		[ WELCOME MESSAGE ]<br />
-            		[ Description of site...<br />
-            		general purpose, etc.<br />
-            		maybe mention Jacque, TSL
-            	</div>
-            		            	
-            	<div style="float: left;">
-	            	<div class="column-container">
-	            	  <% c = Category.first %>
-	            		<div class="category-container-image">Image</div>
-		            	<div class="category-container-text"><%= link_to "#{c.name}", category_url(c) %></div>
-	            	</div>
-	            	<div class="column-container">
-	            		<% c = Category.offset(1).first %>
-	            		<div class="category-container-image">Image</div>
-		            	<div class="category-container-text"><%= link_to "#{c.name}", category_url(c) %></div>
-	            	</div>
-	            	<div class="column-container">
-	            		<% c = Category.offset(2).first %>
-	            		<div class="category-container-image">Image</div>
-		            	<div class="category-container-text"><%= link_to "#{c.name}", category_url(c) %></div>
-	            	</div>
-	            	<div style="clear: both;"></div>
 
-            	
-            	
-            	<div style="float: left;">
-	            	<div class="column-container">
-	            		<% c = Category.offset(3).first %>
-	            		<div class="category-container-image">Image</div>
-		            	<div class="category-container-text"><%= link_to "#{c.name}", category_url(c) %></div>
-	            	</div>
-	            	<div class="column-container">
-	            		<% c = Category.offset(4).first %>
-									<div class="category-container-image">Image</div>
-		            	<div class="category-container-text"><%= link_to "#{c.name}", category_url(c) %></div>
-	            	</div>
-	            	<div class="column-container">
-	            		<% c = Category.offset(5).first %>
-	            		<div class="category-container-image">Image</div>
-		            	<div class="category-container-text"><%= link_to "#{c.name}", category_url(c) %></div>
-	            	</div>
-	            	<div style="clear: both;"></div>
-	            	
-            	<div style="clear: both;">&nbsp;</div>
+        <!-- VIEW HTML Start -->
+        	<div class="tool-container">
+            <%= image_tag 'renovating.png', :class => 'image' %>
+        		<div class="title">Renovating</div>
+        		<div class="description">A description of what renovating is all about would go here.</div>
+        		<div class="items">
+        			<ul>
+        				<% renovating_id = Category.find_by_name('Renovating').id %>
+								<% Tool.where(:category_id => renovating_id).each do |t| %>
+        				<li class="tools-container-item"><%= link_to "#{t.name}", tool_url(t.id) %></li>
+								<% end %>
+        			</ul>
+        		</div>
         	</div>
-            	
-            	<!-- Home view end -->
-            	
-            	<!-- YEILD End -->
-            	
+        	<div class="tool-container">
+          	<%= image_tag 'marketing.png', :class => 'image' %>
+        		<div class="title">Marketing</div>
+        		<div class="description">A description of what marketing is all about would go here.</div>
+        		<div class="items">
+        			<ul>
+        				<% marketing_id = Category.find_by_name('Marketing').id %>
+								<% Tool.where(:category_id => marketing_id).each do |t| %>
+        				<li class="tools-container-item"><%= link_to "#{t.name}", tool_url(t.id) %></li>
+								<% end %>
+	        			</ul>
+        		</div>
         	</div>
+        	<div class="tool-container">
+          	<%= image_tag 'fundraising.png', :class => 'image' %>
+        		<div class="title">Fundraising</div>
+        		<div class="description">A description of what fundraising is all about would go here.</div>
+        		<div class="items">
+        			<ul>
+        				<% fundraising_id = Category.find_by_name('Fundraising').id %>
+								<% Tool.where(:category_id => fundraising_id).each do |t| %>
+        				<li class="tools-container-item"><%= link_to "#{t.name}", tool_url(t.id) %></li>
+								<% end %>
+        			</ul>
+        		</div>
+        	</div>
+        	<div style="clear: both;"></div>
+        	<!-- VIEW HTML End -->
+        	
         </div>
     </div>
     
