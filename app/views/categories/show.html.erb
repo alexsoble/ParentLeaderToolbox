@@ -1,49 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Category</title>
+    <link href="css/plt.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
 
-        	<div id="toolsIndex">
 
-            	<div id="pageHeading">
-            		<div id="member-name">
-            			Welcome Member!
-            		</div>
-            		
-            		<% this_category = Category.find_by_id(params[:id]) %>
-            		<h1>
-            			CATEGORY:  <%= this_category.name.upcase %>
-            		</h2>
-	        		<p>
-	            		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt 
-	            		ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-	            		laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-	            		voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat 
-	            		cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-	        		</p>
-            	</div>
-            
-            	<div class="column-container side-nav">
-            		<% Category.all.each do |c| %>
-	            		<div class="side-nav-item"><%= link_to "#{c.name}", category_url(c) %></div>
-	            	<% end %>
-            	</div>
-            	
-            	<% these_tools = Tool.where(:category_id => this_category.id) %>
-            	<% these_tools.all.each do |t| %>
-            	
-            	<div style="float: left;">
-	            	<div class="tool-container" style="border-top: solid 1px #333333;">
-	            		<p style="font-weight: bold;">
-		            		<%= t.name %>
-	            		</p>
-	            		<p>
-										<%= t.description %>
-		            	</p> 	
-	            			<%= link_to "Visit their website", "#{t.url}" %>
-	            	</div>
-            	</div>
-            	
-            	<% end %>
-            	            	
-            	<div style="clear: both;"></div>
+	<div id="p-header">
+        <div id="p-header-container">
+        	<div id="p-header-menu">
+	            <div id="nav-bottom">
+	                <ul>
+	                    <li id="navSignIn" class="last">
+	                        <a id="lnkHome" href="signin.html">Sign In</a>
+	                    </li>
+	                    <li id="navHome">
+	                        <a id="lnkHome" href="index.html">Your Toolbox</a>
+	                    </li>      
+	                	<li id="navAboutUs">
+	                        <a id="lnkAboutUs" href="about.html">About Us</a>
+	                    </li>
+	                    <li id="navTools">
+	                        <a id="lnkTools" href="tools.html">Tools</a>
+	                    </li>              
+	                </ul>
+	            </div>
+	            <div id="logo" onclick="location.href='index.html';">
+	            	<img src="images/plt_logo.png" alt="plt_logo" style="width: 340px;">
+	            </div>
         	</div>
+        </div>
+    </div>
+    
+    <div id="p-body">
+        <div id="p-body-container">
+        
+        	<!-- VIEW HTML Start -->
+        	<div style="float: left; width: 200px;">
+	        	<div style="float: rigth;">
+		        	<div class="category-side-menu"  onclick="location.href='category_renovating.html';">
+		        		<div class="title">Renovating</div>
+		        	</div>
+		        	<div class="category-side-menu" onclick="location.href='category_marketing.html';">
+		        		<div class="title">Marketing</div>
+		        	</div>
+		        	<div class="category-side-menu active">
+		        		<div class="title">Fundraising</div>
+		        	</div>
+	        	</div>
+        	</div>
+        	
+        	<div class="category-content">
+        		<div style="float: left;">
+        			<img class="image" src="images/home/fundraising.png" alt="renovating">
+        		</div>
+        		<div style="float: left; margin: 16px;">
+        			<div class="title">Fundraising</div>
+        			<div class="description">
+	        			Introduction to category, why this category is important, what it covers, etc.
+        			</div>
+        		</div>
+        		<div style="clear: both; border-bottom: solid 1px #c0c0c0; margin: 0px 16px;"></div>
+        		
+        		<div class="category-tool-container">
+        			<div class="title">Fundraising Strategies & Planning</div>
+        			<div class="description">
+        				Terrific resource from  "PTO Today," incudes articles, examples, video. 
+        			</div>
+        			<div class="comments">
+        				2 comments
+        			</div>
+        			<div class="link" onclick="window.open('http://www.ptotoday.com/fundraising-strategies');">
+        				Visit Website
+        			</div>
+        		</div>
+        		<div class="category-tool-container last">
+        			<div class="title">PTO Bylaws/Nonprofit</div>
+        			<div class="description">
+        				Everything you need to know for turning your PTO in a nonprofit from "PTO Today." 
+        			</div>
+        			<div class="comments">
+        				6 comments
+        			</div>
+        			<div class="link" onclick="window.open('http://www.ptotoday.com/bylaws-nonprofit');">
+        				Visit Website
+        			</div>
+        		</div>        		
+        	</div>	
+            	
+	        <div style="clear: both;"></div>
         	<!-- VIEW HTML End -->
         	
         </div>
