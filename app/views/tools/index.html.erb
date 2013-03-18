@@ -1,5 +1,9 @@
+<% Category.all.each do |c| %>
+
         	<div class="tool-container">
-            <%= link_to (image_tag 'renovating.png', :class => 'image') %>
+        	  <%= link_to category_url(c) do %> 
+            	<%= image_tag 'renovating.png', :class => 'image' %>
+            <% end %>
         		<div class="title">Renovating</div>
         		<div class="description">The school environment has been called "the third teacher." Painting, planting gardens, and fixing up playgrounds makes a big difference!</div>
         		<div class="items">
@@ -11,9 +15,12 @@
         			</ul>
         		</div>
         	</div>
+        	      
         	<div class="tool-container">
-          	<%= image_tag 'marketing.png', :class => 'image' %>
-        		<div class="title">Marketing</div>
+        	  <%= link_to category_url(c) do %> 
+	          	<%= image_tag 'marketing.png', :class => 'image' %>
+	          <% end %>
+	          <div class="title">Marketing</div>
         		<div class="description">Marketing, public relations, and branding are important ways to boost your school's profile in the community.</div>
         		<div class="items">
         			<ul>
@@ -24,8 +31,11 @@
 	        			</ul>
         		</div>
         	</div>
+        
         	<div class="tool-container">
-          	<%= image_tag 'fundraising.png', :class => 'image' %>
+        		<%= link_to category_url(c) do %> 
+          		<%= image_tag 'fundraising.png', :class => 'image' %>
+          	<% end %>
         		<div class="title">Fundraising</div>
         		<div class="description">From bake sales to foundation grants, parents are increasingly raising money for their schools. Find out how to set up as a nonprofit, write grants and find donors.</div>
         		<div class="items">
@@ -38,17 +48,5 @@
         		</div>
         	</div>
         	<div style="clear: both;"></div>
-        	<!-- VIEW HTML End -->
-        	
-        </div>
-    </div>
-    
-    <div id="p-footer">
-        <div id="p-footer-container">
-            <div style="padding: 16px;">
-                Footer</div>
-        </div>
-    </div>
-
-</body>
-</html>
+      
+      <% end %>
