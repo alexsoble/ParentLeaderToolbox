@@ -1,16 +1,18 @@
 <% c = Category.find_by_id(params[:id]) %>
-        	<div style="float: left; width: 200px;">
-	        	<div style="float: rigth;">
-		        	<div class="category-side-menu active">
-		        		<div class="title">Renovating</div>
-		        	</div>
-		        	<div class="category-side-menu" onclick="location.href='category_marketing.html';">
-		        		<div class="title">Marketing</div>
-		        	</div>
-		        	<div class="category-side-menu" onclick="location.href='category_fundraising.html';">
-		        		<div class="title">Fundraising</div>
-		        	</div>
-	        	</div>
+
+    <div style="float: left; width: 200px;">
+	    	<div style="float: rigth;">
+	     			<% Category.all.each do |q| %>
+							<% if q.id == c.id %>
+								<div class="category-side-menu active">
+		        			<div class="title"><%= "#{q.name}"%></div>
+		        		</div>
+							<% else %>
+		        		<div class="category-side-menu">
+		        			<div class="title"><%= link_to "#{q.name}", category_url(q.id) %></div>
+		        		</div>
+		        <% end %>
+		      <% end %>
         	</div>
         	<div class="category-content">
         		<div style="float: left;">
