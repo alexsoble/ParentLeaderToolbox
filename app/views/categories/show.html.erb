@@ -1,7 +1,7 @@
 <% c = Category.find_by_id(params[:id]) %>
 
     <div style="float: left; width: 200px;">
-	    	<div style="float: rigth;">
+	    	<div style="float: right;">
 	     			<% Category.all.each do |q| %>
 							<% if q.id == c.id %>
 								<div class="category-side-menu active">
@@ -16,7 +16,7 @@
         	</div>
         	<div class="category-content">
         		<div style="float: left;">
-						<%= image_tag "#{c.name.downcase}.png" %> 
+						<%= image_tag "#{c.name.downcase}.png", :class => "image" %> 
         		</div>
         		<div style="float: left; margin: 16px;">
         			<div class="title"><%= "#{c.name}" %></div>
