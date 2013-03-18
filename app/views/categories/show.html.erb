@@ -37,9 +37,9 @@
         			</div>
         			<div class="comments">
         			  <i class="icon-wrench"></i> 
-        				<%= link_to 'Add to my toolbox', '/welcome' %><br>
+        				<%= link_to 'Add to my toolbox', tool_url(t.id) %><br>
         				<i class="icon-bullhorn"></i>
-        				<%= link_to 'Add a comment', '/welcome' %>
+        				<%= link_to 'Add a comment', edit_tool_url(t.id) %>
         			</div>
         			<div class="link">
         				<%= link_to 'Visit Website', "#{t.url}" %>
