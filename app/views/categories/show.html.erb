@@ -1,106 +1,49 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Category</title>
-    <link href="css/plt.css" rel="stylesheet" type="text/css" />
-</head>
-<body>
-
-
-	<div id="p-header">
-        <div id="p-header-container">
-        	<div id="p-header-menu">
-	            <div id="nav-bottom">
-	                <ul>
-	                    <li id="navSignIn" class="last">
-	                        <a id="lnkHome" href="signin.html">Sign In</a>
-	                    </li>
-	                    <li id="navHome">
-	                        <a id="lnkHome" href="index.html">Your Toolbox</a>
-	                    </li>      
-	                	<li id="navAboutUs">
-	                        <a id="lnkAboutUs" href="about.html">About Us</a>
-	                    </li>
-	                    <li id="navTools">
-	                        <a id="lnkTools" href="tools.html">Tools</a>
-	                    </li>              
-	                </ul>
-	            </div>
-	            <div id="logo" onclick="location.href='index.html';">
-	            	<img src="images/plt_logo.png" alt="plt_logo" style="width: 340px;">
-	            </div>
-        	</div>
-        </div>
-    </div>
-    
-    <div id="p-body">
-        <div id="p-body-container">
-        
-        	<!-- VIEW HTML Start -->
+<% c = Category.find_by_id(params[:id]) %>
         	<div style="float: left; width: 200px;">
 	        	<div style="float: rigth;">
-		        	<div class="category-side-menu"  onclick="location.href='category_renovating.html';">
+		        	<div class="category-side-menu active">
 		        		<div class="title">Renovating</div>
 		        	</div>
 		        	<div class="category-side-menu" onclick="location.href='category_marketing.html';">
 		        		<div class="title">Marketing</div>
 		        	</div>
-		        	<div class="category-side-menu active">
+		        	<div class="category-side-menu" onclick="location.href='category_fundraising.html';">
 		        		<div class="title">Fundraising</div>
 		        	</div>
 	        	</div>
         	</div>
-        	
         	<div class="category-content">
         		<div style="float: left;">
-        			<img class="image" src="images/home/fundraising.png" alt="renovating">
+						<%= image_tag "#{c.name.downcase}.png" %> 
         		</div>
         		<div style="float: left; margin: 16px;">
-        			<div class="title">Fundraising</div>
+        			<div class="title"><%= "#{c.name}" %></div>
         			<div class="description">
-	        			Introduction to category, why this category is important, what it covers, etc.
+	        			<%= "#{c.description}" %>
         			</div>
         		</div>
         		<div style="clear: both; border-bottom: solid 1px #c0c0c0; margin: 0px 16px;"></div>
-        		
+        
+        
+        <% tools = Tool.where(:category_id => c.id).limit(6) %>
+        <% tools.all.each do |t| %>
+        
         		<div class="category-tool-container">
-        			<div class="title">Fundraising Strategies & Planning</div>
+        			<div class="title"><%= t.name %></div>
         			<div class="description">
-        				Terrific resource from  "PTO Today," incudes articles, examples, video. 
+									<%= t.description %>
         			</div>
         			<div class="comments">
-        				2 comments
+        				0 comments
         			</div>
-        			<div class="link" onclick="window.open('http://www.ptotoday.com/fundraising-strategies');">
-        				Visit Website
+        			<div class="link">
+        				<%= link_to 'Visit Website', "#{t.url}" %>
         			</div>
+        			<br>
         		</div>
-        		<div class="category-tool-container last">
-        			<div class="title">PTO Bylaws/Nonprofit</div>
-        			<div class="description">
-        				Everything you need to know for turning your PTO in a nonprofit from "PTO Today." 
-        			</div>
-        			<div class="comments">
-        				6 comments
-        			</div>
-        			<div class="link" onclick="window.open('http://www.ptotoday.com/bylaws-nonprofit');">
-        				Visit Website
-        			</div>
-        		</div>        		
+        		
+						<% end %>
+						        		
         	</div>	
             	
 	        <div style="clear: both;"></div>
-        	<!-- VIEW HTML End -->
-        	
-        </div>
-    </div>
-    
-    <div id="p-footer">
-        <div id="p-footer-container">
-            <div style="padding: 16px;">
-                Footer</div>
-        </div>
-    </div>
-
-</body>
-</html>

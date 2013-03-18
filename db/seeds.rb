@@ -1,13 +1,19 @@
 categories = [
-	{ :name => 'Renovating' },
-	{ :name => 'Marketing' },
-	{ :name => 'Fundraising' },
-]
+
+	{ :name => 'Renovating',
+	  :description => 'The school environment has been called "the third teacher." Painting, planting gardens, and fixing up playgrounds makes a big difference!'},
+	{ :name => 'Marketing',
+	  :description => "Marketing, public relations and branding are important ways to boost your school's profile in the community" },
+	{ :name => 'Fundraising',
+		:description => 'From bake sales to foundation grants, parents are increasingly raising money for their schools. Find out how to set up as a nonprofit, write grants and find donors.' },
+
+						]
 
 Category.destroy_all
 categories.each do |category|
   c = Category.new
   c.name = category[:name]
+  c.description = category[:description]
   c.save
 end
 

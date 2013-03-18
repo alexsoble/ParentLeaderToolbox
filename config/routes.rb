@@ -11,7 +11,6 @@ ParentToolbox::Application.routes.draw do
 	get '/signup' => 'users#new'
 	get '/signout' => 'sessions#destroy', as: :signout
 
-	
 	resources :users
   resources :tools
 	resources :categories
