@@ -16,5 +16,8 @@ ParentToolbox::Application.routes.draw do
   resources :tools
 	resources :categories
 	resources :comments, only: [:create, :destroy]
+	resources :toolstars, only: [:create, :destroy]
+
+	root to: 'pages#home'
 
 end
