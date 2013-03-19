@@ -37,9 +37,28 @@
         			</div>
         			<div class="comments">
         			  <i class="icon-wrench"></i> 
-        				<%= link_to 'Add to my toolbox', tool_url(t.id) %><br>
+                        <% if Toolstar.find_by_tool_id(t.id).present? %>
+                            <%= form_for(Toolstar.new) do |f| %>
+                              <%= f.hidden_field :tool_id, value: t.id %>
+                              <%= f.hidden_field :user_id, value: session[:user_id] %>
+                              <%= f.hidden_field :stars, value: false %>
+                              <div class="actions">
+                                <%= f.submit 'Remove this from your toolbox!' %>
+                              </div>
+                            <% end %> 
+                        <% else %>
+                            <%= form_for(Toolstar.new) do |f| %>
+                              <%= f.hidden_field :tool_id, value: t.id %>
+                              <%= f.hidden_field :user_id, value: session[:user_id] %>
+                              <%= f.hidden_field :stars, value: true %>
+                              <div class="actions">
+                                <%= f.submit 'Add this to your toolbox!' %>
+                              </div>
+                            <% end %> 
+                        <% end %>
+
         				<i class="icon-bullhorn"></i>
-        				<%= link_to 'Add a comment', edit_tool_url(t.id) %>
+        				<%= link_to 'Add a comment', tool_url(t.id) %>
         			</div>
         			<div class="link">
         				<%= link_to 'Visit Website', "#{t.url}" %>
