@@ -2,51 +2,16 @@
 
         	<div class="tool-container">
         	  <%= link_to category_url(c) do %> 
-            	<%= image_tag 'renovating.png', :class => 'image' %>
+            	<%= image_tag "#{c.name.downcase}.png", :class => 'image' %>
             <% end %>
-        		<div class="title">Renovating</div>
-        		<div class="description">The school environment has been called "the third teacher." Painting, planting gardens, and fixing up playgrounds makes a big difference!</div>
+        		<div class="title"><%= c.name %></div>
+        		<div class="description"><%= c.description %></div>
         		<div class="items">
         			<ul>
-        				<% renovating_id = Category.find_by_name('Renovating').id %>
-								<% Tool.where(:category_id => renovating_id).each do |t| %>
+								<% Tool.where(:category_id => c.id).each do |t| %>
         				<li class="tools-container-item"><%= link_to "#{t.name}", tool_url(t.id) %></li>
 								<% end %>
         			</ul>
         		</div>
         	</div>
-        	      
-        	<div class="tool-container">
-        	  <%= link_to category_url(c) do %> 
-	          	<%= image_tag 'marketing.png', :class => 'image' %>
-	          <% end %>
-	          <div class="title">Marketing</div>
-        		<div class="description">Marketing, public relations, and branding are important ways to boost your school's profile in the community.</div>
-        		<div class="items">
-        			<ul>
-        				<% marketing_id = Category.find_by_name('Marketing').id %>
-								<% Tool.where(:category_id => marketing_id).each do |t| %>
-        				<li class="tools-container-item"><%= link_to "#{t.name}", tool_url(t.id) %></li>
-								<% end %>
-	        			</ul>
-        		</div>
-        	</div>
-        
-        	<div class="tool-container">
-        		<%= link_to category_url(c) do %> 
-          		<%= image_tag 'fundraising.png', :class => 'image' %>
-          	<% end %>
-        		<div class="title">Fundraising</div>
-        		<div class="description">From bake sales to foundation grants, parents are increasingly raising money for their schools. Find out how to set up as a nonprofit, write grants and find donors.</div>
-        		<div class="items">
-        			<ul>
-        				<% fundraising_id = Category.find_by_name('Fundraising').id %>
-								<% Tool.where(:category_id => fundraising_id).each do |t| %>
-        				<li class="tools-container-item"><%= link_to "#{t.name}", tool_url(t.id) %></li>
-								<% end %>
-        			</ul>
-        		</div>
-        	</div>
-        	<div style="clear: both;"></div>
-      
       <% end %>
