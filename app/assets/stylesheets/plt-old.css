@@ -1,0 +1,398 @@
+body
+{
+	background-color: #FFFFFF;
+	color: #333333;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	margin: 0px;
+}
+h1
+{
+	font-weight: bold;
+	font-size: 20px;
+	margin: 0px;
+}
+
+/* Start Page Layout Template */
+#p-header
+{
+	min-width: 960px;
+	text-align: left;
+	width: 100%;
+}
+#p-header-container
+{
+	margin: auto;
+	width: 960px;
+	padding: 16px 0px 24px 0px;
+}
+#p-header-menu
+{
+	border-bottom: solid 1px #c0c0c0;
+	padding-bottom: 8px;
+	margin: 0px 8px;
+}
+#p-body
+{
+	width: 100%;
+	/* margin-top: 16px; */
+}
+#p-body-container
+{
+	margin: auto;
+	text-align: left;
+	width: 960px;
+}
+#p-footer
+{
+	width: 100%;
+	margin-top: 16px;
+	display: none;
+}
+#p-footer-container
+{
+	margin: auto;
+	width: 960px;
+}
+/* End Page Layout Template */
+
+
+/* ID Selectors */
+#homePage .column-container
+{
+	float: left;
+	width: 272px;
+	min-height: 400px;
+	padding: 16px;
+	margin: 0px 8px;
+}
+#homePage .video
+{
+	float: left;
+	width: 304px;
+	margin: 0px 8px;
+}
+#homePage .message-container
+{
+	float: left;
+	margin: 0px 8px;
+	width: 624px; 
+}
+#homePage .message-container .content-area
+{
+	padding: 0px 32px 0px 40px;
+}
+#homePage .message-container .title
+{
+	font-size: 150%;
+	font-weight: bold;
+}
+#homePage .message-container .content
+{
+	margin-top: 16px;
+	line-height: 24px;
+}
+#homePage .column-container.featured
+{
+	color: #f5f5f5;
+	background-color: #ff0000;
+	border-radius: 12px;
+	text-align: center;
+	cursor: pointer;
+}
+#homePage .column-container.featured .image
+{
+	width: 120px;
+	margin-top: 16px;
+}
+#homePage .column-container.featured .title
+{
+	margin: 16px 0px;
+	font-size: 150%;
+	letter-spacing: 2px;
+}
+#homePage .column-container.featured .description
+{
+	width: 236px;
+	margin-left: 18px;
+	line-height: 24px;
+	text-align: left;
+}
+#logo
+{
+	padding: 8px 0px;
+	font-weight: bold;
+	font-size: 24px; 
+	cursor: pointer;
+}
+#member-name
+{
+	float: right; 
+	font-weight: bold; 
+	margin-top: 4px;
+}
+#nav-bottom 
+{
+    float: right;
+    margin: 16px 0px 0px 0px;
+    text-align: right;
+    padding: 0px;
+    /*outline: solid 1px red;*/
+}
+#nav-bottom ul 
+{
+    list-style-type: none;
+    height: 25px;
+    margin: 0;
+    padding: 0;
+}
+#nav-bottom li.last {
+    margin-right: 0px;
+}
+#nav-bottom li 
+{
+    float: right;
+    margin: 0px 15px 0px 15px;
+}
+#nav-bottom ul a {	
+	padding:15px 0px 11px 0px;
+}
+#nav-bottom a:link {
+	color: #6e6f6f;
+	text-decoration: none;
+}
+#nav-bottom a:visited {
+	color: #6e6f6f;
+	text-decoration: none;
+}
+#nav-bottom a:hover {
+	color: #f26532;
+	text-decoration: none;
+}
+#nav-bottom a:active {
+	color: #6e6f6f;
+	text-decoration: none;
+}
+#pageHeading 
+{
+	padding: 16px;
+	font-size: 150%;
+	font-weight: bold;
+	text-align: center;
+}
+#toolsIndex .column-container
+{
+	margin-top: 16px;
+	float: left;
+	width: 232px;
+	cursor: pointer;
+	/* outline: solid 1px red; */
+}
+#toolsIndex .column-container.side-nav
+{
+	margin-left: 16px;
+}
+/* End ID Selectords */
+
+
+/* Element Selectors */
+.side-nav-item
+{
+	padding: 16px 0px;
+}
+.category-side-menu
+{
+	width: 158px;
+	padding: 16px;
+	margin: 0px 0px 8px 8px;
+	color: #f5f5f5;
+	background-color: #ff0000;
+	border: solid 1px #ff0000;
+	border-top-left-radius: 12px;
+	border-bottom-left-radius: 12px;
+	text-align: center;
+	text-decoration: underline;
+	cursor: pointer;
+}
+.category-side-menu.active
+{
+	background-color: #ffffff;
+	border-right: solid 1px #ffffff;
+	color: #333333;
+	text-decoration: none;
+	cursor: none;
+}
+.category-side-menu:hover
+{
+	text-decoration: none;
+}
+.category-content
+{
+	float: left; 
+	width: 750px; 
+	min-height: 400px; 
+	border: solid 1px red;
+	border-top-right-radius: 12px;
+	border-bottom-right-radius: 12px;
+	border-bottom-left-radius: 12px;
+}
+.category-content .image
+{
+	background-color: red;
+	margin: 16px;
+	padding: 16px;	
+	border-radius: 12px;
+	width: 134px;
+}
+.category-content .title
+{
+	font-size: 150%;
+	font-weight: bold;
+	letter-spacing: 1px;
+	margin-right: 100px;
+}
+.category-description
+{
+	margin-top: 16px;
+	line-height: 125%;
+	width: 460px;
+}
+.category-content .description
+{
+	margin-top: 16px;
+	line-height: 125%;
+}
+
+
+.category-tool-container 
+{
+	margin: 16px; 
+	border-bottom: dotted 1px #c0c0c0; 
+	padding-bottom: 8px;
+}
+.category-tool-container.last
+{
+	border: none;
+}
+.category-tool-container .title
+{
+	font-size: 110%;
+	font-weight: bold; 
+	margin-bottom: 8px;
+}
+.category-tool-container .description
+{
+	margin-bottom: 12px; 
+	line-height: 125%;
+}
+.category-tool-container .comments
+{
+	float: right; 
+	font-size: 12px; 
+	margin-top: 4px; 
+	color: #000000; 
+	font-weight: bold;
+}
+.category-tool-container .link
+{
+	margin-bottom: 8px; 
+	font-weight: bold; 
+	text-decoration: underline;
+	cursor: pointer;
+}
+.category-tool-container .link:hover
+{
+	text-decoration: none;
+}
+
+.about-us-card
+{
+	background: url(../images/about/background.jpg);
+	float: left;
+	width: 318px;
+	min-height: 280px;
+	text-align: center;
+	border-right: solid 2px #f5f5f5;
+	border-bottom: solid 2px #f5f5f5;
+}
+.about-us-image
+{
+	width: 160px;
+	border-radius: 50%;
+	margin-top: 32px;
+}
+.about-us-person
+{
+	margin-top: 16px;
+	line-height: 150%;
+}
+.form-container
+{
+	border: 2px solid #4a4a4a; 
+	background-color: #F5F5F5;
+	text-align: left; 
+	border-radius: 12px;
+}
+.link-text
+{
+	color: blue;
+	text-decoration: underline;
+	cursor: pointer;
+}
+.link-text:hover
+{
+	text-decoration: none;
+}
+.tool-container
+{
+	float: left;
+	width: 272px;
+	min-height: 600px;
+	padding: 16px;
+	margin: 0px 8px;
+	color: #f5f5f5;
+	background-color: #ff0000;
+	border-radius: 12px;
+	text-align: center;
+}
+.tool-container.about
+{
+	height: 272px;
+	min-height: 272px;
+}
+.tool-container .image
+{
+	width: 120px;
+	margin-top: 16px;
+}
+.tool-container .title
+{
+	margin: 16px 0px;
+	font-size: 150%;
+	letter-spacing: 2px;
+}
+.tool-container .description
+{
+	width: 236px;
+	margin-left: 18px;
+	line-height: 24px;
+	text-align: left;
+}
+.tool-container .items
+{
+	margin-top: 16px;
+	padding-top: 8px;
+	border-top: dotted 1px #f5f5f5;
+	text-align: left;
+}
+.tools-container-item
+{
+	cursor: pointer;
+	padding: 8px 0px;
+	text-decoration: underline;
+}
+.tools-container-item:hover
+{
+	text-decoration: none;
+}
+/* End Element Selectords */

@@ -1,9 +1,45 @@
-<h1><%= @tool.name %></h1>
+<div id="p-body">
+<div id="p-body-container">
 
-<ul>
-	<% @comments.each do |comment| %>
-	<li> <%= comment.text %></li>
-	<% end %>
-</ul>
+<div style="float: left; width: 200px;">
+	<div style="float: right;">
+		<% Category.all.each do |c| %>
+			<div class="category-side-menu">
+				<div class="title"><%= link_to "#{c.name}", category_url(c.id) %></div>
+			</div>
+		</div>
+	</div>
+<% end %>
+
+<% t = Tool.find_by_id(params[:id]) %> 
+<div class="category-content">        		
+  <div class="category-tool-container">
+     <div class="title"><%= "#{t.name}" %></div>
+        <div class="description">
+        	<%= "#{t.description}" %>
+        </div>
+  <div class="link">
+     <%= link_to 'Visit Website', "#{t.url}" %>
+  </div>
+</div>
+
+<% c = t.comments.all %>
+	<% c.each do |comment| %>
+	  <div class="tool-comments-container">
+	    <div class="user-image-container">
+	      <div class="user-image-background">
+	         <img src="images/stick_figure.jpg" class="user-image">
+	      </div>
+	    </div>
+	  <div class="info">
+			<div><%= comment.user.email %> </div>
+			<div><%= comment.created_at %></div>
+	 </div>
+	 		<div class="content">
+				<li> <%= comment.text %></li>
+	    </div>
+	<div class="clear-fix"></div>
+</div>
+<% end %>
 
 <%= render 'form' %>

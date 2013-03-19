@@ -31,7 +31,7 @@
         <% tools.all.each do |t| %>
         
         		<div class="category-tool-container">
-        			<div class="title"><%= t.name %></div>
+        			<div class="title"><%= link_to "#{t.name}", tool_url(t.id) %></div>
         			<div class="description">
 									<%= t.description %>
         			</div>
