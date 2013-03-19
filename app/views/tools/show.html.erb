@@ -33,7 +33,7 @@
 	    </div>
 	  <div class="info">
 			<div><%= comment.user.email %> </div>
-			<div><%= comment.created_at %></div>
+			<div><%= "Posted #{time_ago_in_words(comment.created_at)} ago" %></div>
 	 </div>
 	 		<div class="content">
 				<li> <%= comment.text %></li>
