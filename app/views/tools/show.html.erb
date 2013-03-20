@@ -1,3 +1,5 @@
+<%= stylesheet_link_tag 'bluelinks.css' %>
+
 <div id="p-body">
 <div id="p-body-container">
 
@@ -7,9 +9,9 @@
 			<div class="category-side-menu">
 				<div class="title"><%= link_to "#{c.name}", category_url(c.id) %></div>
 			</div>
+			<% end %>
 		</div>
 	</div>
-<% end %>
 
 <% t = Tool.find_by_id(params[:id]) %> 
 <div class="category-content">        		
@@ -20,26 +22,30 @@
         </div>
   <div class="link">
      <%= link_to 'Visit Website', "#{t.url}" %>
-  </div>
-</div>
-
-<% c = t.comments.all %>
-	<% c.each do |comment| %>
-	  <div class="tool-comments-container">
-	    <div class="user-image-container">
-	      <div class="user-image-background">
-	         <img src="images/stick_figure.jpg" class="user-image">
-	      </div>
+     
+<div class="tool-comments-container">     
+	<% c = t.comments.all %>
+		<% if c != nil %>
+			<% c.each do |comment| %>
+	    	<% if comment.present? && comment.user.present? && comment.user.image.present? %>
+		  	  <div class="user-image-container">
+	    	  	<div class="user-image-background">
+	      	   <%= image_tag "#{comment.user.image}", :class => "user-image", :size => '60x60' %>
+		      </div>
+		    </div>
+		  <% end %>
+		  <% if comment.user.present? %>
+			  <div class="info">
+					<div><%= comment.user.firstname %></div>
+					<div><%= "Posted #{time_ago_in_words(comment.created_at)} ago" %></div>
+		 		</div>
+		 	<% end %>
+		 	<div class="content">
+				  <%= comment.text %>
 	    </div>
-	  <div class="info">
-			<div><%= comment.user.email %> </div>
-			<div><%= "Posted #{time_ago_in_words(comment.created_at)} ago" %></div>
-	 </div>
-	 		<div class="content">
-				<li> <%= comment.text %></li>
-	    </div>
-	<div class="clear-fix"></div>
-</div>
+			<div class="clear-fix"></div>
+	<% end %>
 <% end %>
+</div>
 
 <%= render 'form' %>
