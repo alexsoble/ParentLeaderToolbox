@@ -7,9 +7,9 @@
 			<div class="category-side-menu">
 				<div class="title"><%= link_to "#{c.name}", category_url(c.id) %></div>
 			</div>
+			<% end %>
 		</div>
 	</div>
-<% end %>
 
 <% t = Tool.find_by_id(params[:id]) %> 
 <div class="category-content">        		
@@ -20,9 +20,7 @@
         </div>
   <div class="link">
      <%= link_to 'Visit Website', "#{t.url}" %>
-  </div>
-</div>
-
+     
 <% c = t.comments.all %>
 	<% c.each do |comment| %>
 	  <div class="tool-comments-container">
