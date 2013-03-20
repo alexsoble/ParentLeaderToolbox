@@ -11,10 +11,13 @@
         <div id="p-header-container">
             <div id="nav-bottom">
                 <ul>
-                    <% if session[:user_id] %>
+                    <% if session[:user_id] %>                     
                         <li id="navSignOut" class="last">
                             <a id="lnkHome" href="/signout">Sign Out</a>
                         </li>
+                        <li id="navSignOut" class="last">
+                            <a id="lnkHome" href="/users/<%= session[:user_id] %>"><%= User.find(session[:user_id]).email %>'s Toolbox</a>
+                        </li>   
                     <% else -%>
                         <li id="navSignUp" class="last">
                             <a id="lnkHome" href="/signup">Sign Up</a>

@@ -1,0 +1,7 @@
+<h1>Hello <%= User.find(session[:user_id]).email %>!</h1>
+
+<h4>Here are your tools:</h4>
+
+<% Toolstar.where(user_id: session[:user_id]).each do |toolstar| %>
+	<li><%= Tool.find(toolstar.tool_id).name %></li>
+<% end %>
