@@ -37,23 +37,8 @@
 									<%= t.description %>
         			</div>
         			<div class="comments">
-        			  <i class="icon-wrench"></i> 
-                        <% if Toolstar.find_by_tool_id(t.id).present? && Toolstar.find_by_tool_id(t.id).user_id == session[:user_id] %>
-                            <div class="actions">
-                                <%= button_to "Remove this from your toolbox", toolstar_path(Toolstar.find_by_tool_id(t.id)), :method => 'delete' %>
-                            </div> 
-                        <% else %>
-                            <%= form_for(Toolstar.new) do |f| %>
-                              <%= f.hidden_field :tool_id, value: t.id %>
-                              <%= f.hidden_field :user_id, value: session[:user_id] %>
-                              <%= f.hidden_field :stars, value: true %>
-                              <%= f.hidden_field :category_id, value: c.id %>
-                              <div class="actions">
-                                <%= f.submit 'Add this to your toolbox!' %>
-                              </div>
-                            <% end %> 
-                        <% end %>
-
+        			  <i class="icon-wrench"></i><%= link_to "Add this to your toolbox", tool_url(t.id) %>
+        			  <br>
         				<i class="icon-bullhorn"></i>
         				<%= link_to 'Add a comment', tool_url(t.id) %>
         			</div>

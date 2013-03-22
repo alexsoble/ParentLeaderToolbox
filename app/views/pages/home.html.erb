@@ -1,32 +1,46 @@
-<div id="homePage">
-
-<%= image_tag "video.png", :class => "video" %>
-
-<div class="message-container"> <div class="content-area"> <div class="title"> Welcome to
-the Parent Leader Toolbox! </div> <div class="content"> <p>Parent involvement has always
-been an important part of education. Now, with school budgets are stretched to the limit,
-parent leadership has become essential.
-<br><br>
-The Parent Leader Toolbox takes its inspiration from the book <i><%= link_to 'How to Walk To School', 
-'http://howtowalktoschool.com/about/' %></i> by Jacqueline Edelberg and Susan Kurland,
-which tells the story of a remarkable turnaround at Nettelhorst School in Chicago’s
-Lakeview neighborhood.
-<br><br>
-At Nettlehorst, the “Roscoe Park Eight” moms dared to dream big, expecting nothing but the
-best for their children. They made their dream a reality. You can, too.
-
-</p> </div> </div> </div>
-
-<div style="clear: both; height: 16px;"></div>
-
-<% Category.all.each do |c| %>
-
-<div class="column-container featured"> 
-	<%= link_to (image_tag "#{c.name.downcase}.png", :class => 'image'), category_url(c.id) %> 
-		<div class="title"><%= "#{c.name}" %></div> 
-		<div class="description"><%= "#{c.description}" %></div> 
-</div> 
-
-<% end %>
-
-<div style="clear: both;"></div> <!-- Home view end -->
+        	<div id="homePage">
+        	
+	        	<div class="intro-text" style="font-size: 20px; line-height: 30px; margin-top: 0px; width: 90%; max-width: 800px; color: #000000;">
+        			Parent involvement has always been an important part of education.<br />
+        			Now, with school budgets stretched to the limit, parent leadership is essential. 
+	        	</div>
+	        	
+        		<!-- <div style="margin: 0px 8px; height: 400px; overflow: hidden;"> -->
+        		<div style="width: 853px; margin: 0px auto;">
+        			<iframe width="853" height="480" src="http://www.youtube.com/embed/XPZr6BYJSGc" frameborder="0" allowfullscreen></iframe>
+          		</div>
+      	
+				<div class="intro-text">
+        			The Parent Leader Toolbox takes its inspiration from the book 
+        			<a href="http://howtowalktoschool.com/about/">How to Walk To School</a> by Jacqueline Edelberg 
+        			and Susan Kurland, which tells the story of a remarkable turnaround at Nettelhorst School in 
+        			Chicago&#39;s Lakeview neighborhood. 
+        		</div>
+            	
+            	<div style="clear: both; height: 16px;"></div>
+            	
+            	<a name="tools"></a>	            	
+            	
+            <% Category.all.each do |c| %>
+            	
+            	<div class="column-container featured">
+            		<%= link_to category_url(c.id) do %>
+            			<%= image_tag "#{c.name.downcase}.png", :size => '90x90' %>
+            		<% end %>
+            		<div class="title"><%= "#{c.name}" %></div>
+            		<div class="description">
+									<%= "#{c.description}" %>
+            		</div>
+            	</div>
+            <% end %>
+            	
+            	<div style="clear: both;"></div>
+            	
+            	<div class="intro-text">
+					At Nettlehorst, the &ldquo;Roscoe Park Eight&rdquo; moms dared to dream big, expecting nothing but the 
+					best for their children.
+        		</div>
+        		<div class="intro-text" style="font-weight: bold; font-size: 125%;">
+        			They made their dream a reality.<br />You can too!
+        		</div>
+            	<!-- Home view end -->

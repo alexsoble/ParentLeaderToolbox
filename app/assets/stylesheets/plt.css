@@ -1,6 +1,6 @@
 body
 {
-	background-color: #FFFFFF;
+	background-color: #fff;
 	color: #333333;
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 16px;
@@ -62,9 +62,22 @@ h1
 {
 	float: left;
 	width: 272px;
-	min-height: 400px;
+	min-height: 360px;
 	padding: 16px;
 	margin: 0px 8px;
+}
+#homePage h1
+{
+	text-align: center;
+	/* color: #000; */
+	font-family: "myriad-pro-1","myriad-pro-2",sans-serif;
+	font-weight: normal;
+	text-align: center;
+	font-size: 36px;
+	font-weight: 600;
+	letter-spacing: -1px;
+	line-height: 1em;
+	margin: 0;
 }
 #homePage .video
 {
@@ -192,6 +205,23 @@ h1
 {
 	margin-left: 16px;
 }
+#tool-comment-count
+{
+	padding: 4px 16px;
+	font-weight: bold;
+}
+#new-comment-container
+{
+	padding: 0px 16px 16px 16px;
+}
+#new-comment-container h4
+{
+	margin: 0px 0px 12px 0px;
+}
+#new-comment-container tr td
+{
+	vertical-align: top;
+}
 /* End ID Selectords */
 
 
@@ -249,7 +279,18 @@ h1
 	font-size: 150%;
 	font-weight: bold;
 	letter-spacing: 1px;
-	margin-right: 100px;
+	margin-right: 80px;
+}
+.category-content .title a
+{
+	font-size: 125%;
+	font-weight: bold;
+	letter-spacing: 1px;
+	color: #808080;
+}
+.category-content .title a:hover
+{
+	text-decoration: none;
 }
 .category-description
 {
@@ -269,6 +310,10 @@ h1
 	margin: 16px; 
 	border-bottom: dotted 1px #c0c0c0; 
 	padding-bottom: 8px;
+}
+.category-tool-container.cursor 
+{
+	cursor: pointer;
 }
 .category-tool-container.last
 {
@@ -333,6 +378,16 @@ h1
 	text-align: left; 
 	border-radius: 12px;
 }
+.intro-text
+{
+	font-family: "Lucida Grande","Lucida Sans Unicode",Helvetica,Arial,sans-serif;
+	color: #666;
+	line-height: 26px;
+	margin: 30px auto;
+	max-width: 700px;
+	text-align: center;
+	width: 80%;
+}
 .link-text
 {
 	color: blue;
@@ -340,6 +395,17 @@ h1
 	cursor: pointer;
 }
 .link-text:hover
+{
+	text-decoration: none;
+}
+a.link-text
+{
+	font-size: 14px;
+	color: blue;
+	text-decoration: underline;
+	cursor: pointer;
+}
+a.link-text:hover
 {
 	text-decoration: none;
 }
@@ -396,13 +462,56 @@ h1
 	text-decoration: none;
 }
 
-a:link, a:visited {
-color: white;
-text-decoration: none;
+.tool-comments-container
+{
+	margin: 16px; 
+	border-bottom: dotted 1px #c0c0c0; 
+	padding-bottom: 16px;
+	font-size: 14px;
 }
-a:hover, a:active {
-color: white;
-text-decoration: underline;
+.tool-comments-container .user-image-container
+{
+	float: left;
+	/* outline: solid 1px red; */
+	width: 136px;
+	line-height: 20px;
+}
+.tool-comments-container .user-image-background
+{
+	float: left;
+	background-color: #ff0000;
+	padding: 8px;
+	border-radius: 12px;
+}
+.tool-comments-container  .user-image-container .user-image
+{
+	width: 80px;
+	/* padding: 2px; */
+	/* background-color: #191970; */
+	border-radius: 50%;
+}
+.tool-comments-container .info
+{
+	float: left;
+	/* outline: solid 1px red; */
+	width: 184px;
+	line-height: 20px;
+}
+.tool-comments-container .comments
+{
+	text-decoration: underline;
+}
+.tool-comments-container .content
+{
+	float: left;
+	/* outline: solid 1px red; */
+	width: 372px;
+	line-height: 20px;
+}
+
+.clear-fix
+{
+	clear: both;
 }
 
 /* End Element Selectords */
